@@ -340,51 +340,52 @@
     background: #f4f4f4;
     font-weight: 600;
   }
-/* Center the form */
-#waitlist-form {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers child elements horizontally */
-    justify-content: center; /* Centers child elements vertically */
-    min-height: 100vh; /* Makes it take full viewport height */
-  }
-  
-  
-  /* Two-column grid for form fields */
-  .form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  /* Make inputs & selects fill width */
-  .form-grid input,
-  .form-grid select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-  
-  /* Mobile: stack fields */
-  @media (max-width: 768px) {
-    .form-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  /* Center the entire waitlist card */
-.cta-grid {
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Optional: Make sure the form itself doesn't stretch too much */
-  .form-card {
-    max-width: 800px;
-    width: 100%;
-  }
+/*
+ * ===============================================
+ * Waitlist Section Styles
+ * ===============================================
+ */
+
+ .waitlist-section {
+  background-color: #f8f9fa; /* A light grey background to make the section stand out */
+  padding: 60px 20px;       /* Adds space: 60px top/bottom, 20px left/right */
+  text-align: center;         /* Centers all the content inside (heading, text, and button) */
+}
+
+.waitlist-section h2 {
+  font-size: 2.5em; /* Makes the heading bigger */
+  margin-bottom: 15px;
+}
+
+.waitlist-section p {
+  font-size: 1.2em;
+  color: #6c757d; /* A softer grey for the paragraph text */
+  margin-bottom: 30px;
+}
+
+
+/*
+ * ===============================================
+ * Waitlist Button Styles (from Option 2 before)
+ * ===============================================
+ */
+
+.waitlist-button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.waitlist-button:hover {
+  background-color: #0056b3;
+}
 
 
 
