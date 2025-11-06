@@ -73,34 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Waitlist form handling (localStorage placeholder + friendly UI)
-  const waitlistForm = document.getElementById('waitlist-form');
-  if (waitlistForm) {
-    waitlistForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const company = document.getElementById('company').value.trim();
-      const volume = document.getElementById('volume').value;
-
-      if (!name || !email || !email.includes('@')) {
-        alert('Please enter your name and a valid email.');
-        return;
-      }
-
-      const entry = { name, email, company, volume, ts: new Date().toISOString() };
-      const list = JSON.parse(localStorage.getItem('earthbags_waitlist') || '[]');
-      list.push(entry);
-      localStorage.setItem('earthbags_waitlist', JSON.stringify(list));
-
-      // Optionally: send to server (placeholder)
-      // fetch('/api/waitlist', {method:'POST', body:JSON.stringify(entry), headers:{'Content-Type':'application/json'}})
-
-      this.reset();
-      alert('Thanks — we received your request. We will email you shortly with next steps.');
-    });
-  }
-
+  
   // Contact sales (example)
   const contactBtn = document.getElementById('contact-team');
   if (contactBtn) {

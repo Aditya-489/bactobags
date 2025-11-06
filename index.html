@@ -300,34 +300,5 @@
   </footer>
 
   <script src="script.js" defer></script>
-
-  <script>
-    const form = document.getElementById('waitlist-form');
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwoqTwSaef0v-uxuX6StHwPval6PKhcsgjrAURWBCSRaTC31Rl0onov8jocEKXCP1Ca/exec'; // <-- PASTE YOUR WEB APP URL HERE
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault(); // Prevents the form from submitting the default way
-      const submitButton = form.querySelector('button[type="submit"]');
-      const originalButtonText = submitButton.textContent;
-      submitButton.disabled = true;
-      submitButton.textContent = 'Submitting...';
-  
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-          console.log('Success!', response);
-          alert('Thank you! You have been added to the waitlist.');
-          form.reset(); // Clears the form fields
-          submitButton.disabled = false;
-          submitButton.textContent = originalButtonText;
-        })
-        .catch(error => {
-          console.error('Error!', error.message);
-          alert('An error occurred. Please try again.');
-          submitButton.disabled = false;
-          submitButton.textContent = originalButtonText;
-        });
-    });
-  </script>
-
 </body>
 </html>
